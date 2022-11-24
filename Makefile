@@ -1,4 +1,4 @@
-all: colorPalette
+all: colorPalette gameoflife
 
 liballegro=-L./libraries/allegro/lib -lalleg
 incallegro=-I./libraries/allegro/include
@@ -8,17 +8,16 @@ colorPalette:
 	g++ -std=c++11 colorPalette.cpp -g -O0 $(incallegro) $(liballegro) -o colorPalette
 
 gameoflife:
-	g++ -std=c++11 gameoflife.cpp -g -O0 $(incallegro) $(liballegro) -o GameOfLife
+	g++ -std=c++11 gameoflife.cpp -g -O0 $(incallegro) $(liballegro) -o gameoflife
 
 
 run:
 	$(LIBRARIES) ./colorPalette
 
-runGameofLife:
-	$(LIBRARIES) ./GameOfLife
+rungameoflife:
+	$(LIBRARIES) ./gameoflife
 
 clean:
-	rm -rf visualizer_*
-	rm -rf mainGenerator
+	rm gameoflife colorPalette
 
 
